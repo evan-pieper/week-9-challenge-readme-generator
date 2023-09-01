@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 var validator = require('validator');
+const { get } = require('http');
 
 function validateInput(input) { // validates that the user has entered something
     if (input) {return true;}
@@ -17,6 +18,7 @@ const questions = [
         message: "What would you like your project to be called? ",
         validate: validateInput,
     },
+
     // Question for the project Description
     {
         type: "input",
@@ -100,6 +102,7 @@ const questions = [
            else {return "Please enter a valid email address.";}
         },
     },
+
 ];
 
 
@@ -116,7 +119,8 @@ function writeToFile(fileName, data)  //takes in a file name and data, then writ
 
 function init() { // takes in the questions array, then uses inquirer to prompt the user for answers to the questions, then passes the answers to generateMarkdown.js, which returns the markdown, which is then passed to writeToFile
     inquirer.prompt(questions).then((data) => {
-        writeToFile("./MdGenerator_output/README.md", generateMarkdown(data));
+        //data.license = getLicense(data.license);
+        writeToFile("./MdGenerator_output/README.md", data);
     });
 }
 

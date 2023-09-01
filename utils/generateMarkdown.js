@@ -9,8 +9,8 @@ if(!license) {return '';} // if no license, return empty string
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(!license) {return '';} // if no license, return empty string
-
-  return `* [License](#license)`
+  license = license.replace(/ /g, '-'); // replace spaces with dashes
+  return `* [License](https://choosealicense.com/licenses/${license.toLowerCase()}/)`
 }
 
 // TODO: Create a function that returns the license section of README
@@ -30,11 +30,11 @@ function generateMarkdown(data) {
   
   # ${data.title}
   ${renderLicenseBadge(data.license)}
-  
+
   ## Description
-  ${data.description}
-    
-  # Table of Contents 
+  ${data.description}  
+
+  ## Table of Contents 
   * [Installation](#-Installation)
   * [Usage](#-Usage)
   * [License](#-Installation)
