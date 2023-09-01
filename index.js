@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-// TODO: Create an array of questions for user input
+
 const questions = [ 
     // Question for the project Title
     {
@@ -18,8 +18,6 @@ const questions = [
         message: "Enter a description of your project: ",
         validate: validateInput,
     },
-
-    // Table of Contents, andling this in the markdown.js
 
     // Question for Installation
     {
@@ -45,7 +43,7 @@ const questions = [
         validate: validateInput,
     },
 
-    // Question for License 
+    // Question for License
     {
         type: "list",
         name: "license",
@@ -78,7 +76,7 @@ const questions = [
         validate: validateInput,
     },
 
-    // QUESTIONS section -- github 
+    // Question for github username 
     {
         type: "input",
         name: "userName",
@@ -86,7 +84,7 @@ const questions = [
         validate: validateInput,
     },
 
-    // QUESTIONS section -- email address
+    // Question for contact email address
     {
         type: "input",
         name: "userEmail",
@@ -98,7 +96,7 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+
 function writeToFile(fileName, data)  //takes in a file name and data, then writes the data to the file (from fileName)
 {
     fs.writeFile(fileName, generateMarkdown(data), function (err) {
@@ -109,11 +107,10 @@ function writeToFile(fileName, data)  //takes in a file name and data, then writ
     });
 }
 
-// TODO: Create a function to initialize app
-function init() {
+
+function init() { // takes in the questions array, then uses inquirer to prompt the user for answers to the questions, then passes the answers to generateMarkdown.js, which returns the markdown, which is then passed to writeToFile
     inquirer.prompt(questions).then((data) => {
-        data.getLicense = getLicense(data.license);
-        writeToFile("./test_files/README.md", data);
+        writeToFile("./MdGenerator_output/README.md", generateMarkdown(data));
     });
 }
 
