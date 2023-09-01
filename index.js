@@ -2,6 +2,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+var validator = require('validator');
+
+function validateInput(input) { // validates that the user has entered something
+    if (input) {return true;}
+    else {return "Please enter a value.";}
+}
 
 const questions = [ 
     // Question for the project Title
@@ -90,7 +96,7 @@ const questions = [
         name: "userEmail",
         message: "What email address can users reach you at? ",
         validate: function (value) {
-           if(isEmail(value)) {return true;}
+           if(validator.isEmail(value)) {return true;}
            else {return "Please enter a valid email address.";}
         },
     },
