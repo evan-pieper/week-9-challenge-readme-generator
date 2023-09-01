@@ -112,11 +112,10 @@ function writeToFile(fileName, data)  //takes in a file name and data, then writ
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
-        writeToFile("README.md", data);
+        data.getLicense = getLicense(data.license);
+        writeToFile("./test_files/README.md", data);
     });
 }
 
 // Function call to initialize app
-init(
-    
-);
+init();
