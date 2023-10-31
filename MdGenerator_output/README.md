@@ -1,10 +1,10 @@
 
   
-  # example project
+  # README Generator
   ![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
   ## Description
-  example description goes here  
+  This command-line application dynamically generates a high-quality and professional README.md file based on user input. Utilizing the Inquirer package, this tool streamlines the process of creating comprehensive documentation for your projects, ensuring that you have more time to dedicate to development  
 
   ## Table of Contents 
   * [Installation](#-Installation)
@@ -15,10 +15,10 @@
   * [Questions](#-Contact-Information)
       
   ## Installation
-  download and install
+  download the application and install it locally using your node manager of choice. Then simply run it from the command line
   
   ## Usage
-  for educational purposes
+  personal use
   
   ## License 
    ![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -27,10 +27,10 @@
   
   
   ## Contributing 
-  TBD
+  NA
   
   ## Tests
-  no testing available
+  NA
   
   ## Contact Information 
   * GitHub Username: evan-pieper
