@@ -1,10 +1,10 @@
 
   
-  # Example Project
+  # example project
   ![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
   ## Description
-  Here is a desricption of the example project. It does lots of things and it does them well  
+  example description goes here  
 
   ## Table of Contents 
   * [Installation](#-Installation)
@@ -15,10 +15,10 @@
   * [Questions](#-Contact-Information)
       
   ## Installation
-  Simply download the application and run it from the command line
+  download and install
   
   ## Usage
-  This project is intended for educational purposes
+  for educational purposes
   
   ## License 
    ![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -27,10 +27,10 @@
   
   
   ## Contributing 
-  Contribution Site TBD
+  TBD
   
   ## Tests
-  No testing options available
+  no testing available
   
   ## Contact Information 
   * GitHub Username: evan-pieper
